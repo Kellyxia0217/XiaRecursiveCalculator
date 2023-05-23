@@ -4,7 +4,7 @@ public class Sequence {
     private String Operation;
     private final int numInSquence;
     private int amount;
-    private ArrayList<Double> List;
+    private ArrayList<Double> List = new ArrayList<Double>();
 
 
     public Sequence (int startingNum, String Operation, int numInSquence, int amount) {
@@ -17,13 +17,12 @@ public class Sequence {
     public double AlgAndGeoSequence() {
         double num = startingNum;
         ArrayList<Double> L = new ArrayList<Double>();
-        L.add((double) startingNum);
+        List.add((double) startingNum);
         if (Operation.equals("a")) {
             for (int i = 1; i < numInSquence; i++) {
                num += amount;
-               L.add(num);
+               List.add(num);
             }
-            List = L;
             return num;
         } else if (Operation.equals("s")) {
             for (int i = 1; i < numInSquence; i++) {
