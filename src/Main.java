@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.*;
 public class Main {
     public static void main(String[] args) {
@@ -15,8 +16,13 @@ public class Main {
         int amount = scan.nextInt();
 
 
+
         Sequence s1 = new Sequence(startingNum,Operation,numInSequence,amount);
         System.out.println("");
+        System.out.print("The List of all the numbers:");
+        System.out.println(s1.getList());
+        System.out.print("The number at the " + numInSequence + "th position according to the things inputted is:");
         System.out.println(s1.AlgAndGeoSequence());
+
     }
 }
