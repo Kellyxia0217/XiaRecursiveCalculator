@@ -1,7 +1,10 @@
 import java.util.*;
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        MainGUI launch = new MainGUI();
+    }
+}
+      /*  Scanner scan = new Scanner(System.in);
         System.out.print("Choose the Starting Number:");
         int startingNum = scan.nextInt();
         System.out.println("");
@@ -24,6 +27,4 @@ public class Main {
         System.out.println(s1.AlgAndGeoSequence());
         System.out.print("The number at the " + numInSequence + "th position according to the things inputted is(explicit version):");
         System.out.println(s1.explicitVersion());
-
-    }
-}
+*/

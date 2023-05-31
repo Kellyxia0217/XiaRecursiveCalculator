@@ -62,4 +62,6 @@ public class Sequence {
     public ArrayList<Double> getList() {
         return List;
     }
+
+
 }
