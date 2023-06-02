@@ -14,7 +14,6 @@ public class Sequence {
         this.amount = amount;
 
         double num = startingNum;
-        ArrayList<Double> L = new ArrayList<Double>();
         List.add((double) startingNum);
         if (Operation.equals("a")) {
             for (int i = 1; i < numInSequence; i++) {
@@ -31,23 +30,25 @@ public class Sequence {
     }
 
 
-    public double AlgAndGeoSequence() {
+    public double ArithmeticSequence() {
         double num = startingNum;
-        ArrayList<Double> L = new ArrayList<Double>();
-        List.add((double) startingNum);
-        if (Operation.equals("a")) {
             for (int i = 1; i < numInSequence; i++) {
                num += amount;
             }
             return num;
-        }  else if (Operation.equals("g")) {
-            for (int i = 1; i < numInSequence; i++) {
-                num *= amount;
-            }
-            return num;
+
         }
-        return -9999999.0;
-    }
+        public double GeometricSequence() {
+        double num = startingNum;
+        for (int i = 1; i < numInSequence; i++) {
+            num *= amount;
+        }
+        return num;
+        }
+
+
+
+
      public double explicitVersion() {
         double num = startingNum;
         if (Operation.equals("a")) {

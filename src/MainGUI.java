@@ -33,10 +33,6 @@ public class MainGUI extends JFrame implements ActionListener, KeyListener {
         frame.setLayout(null);
         frame.setVisible(true);
     }
-    public void close() {
-        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
-        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

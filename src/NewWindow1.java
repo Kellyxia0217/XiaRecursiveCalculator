@@ -6,7 +6,7 @@ public class NewWindow1 {
     JFrame frame = new JFrame("Geometric Sequence");
     JLabel label = new JLabel("Enter the Starting Number:");
     JTextField  textField = new JTextField();
-    JLabel label1 = new JLabel("Enter the Operation you want to do (s for subtraction, a for addition):");
+    JLabel label1 = new JLabel("Enter the Operation you want to do (m for multiplication, d for division):");
     JTextField textField1 = new JTextField();
     JLabel label2 = new JLabel("Enter the Common Difference:");
     JTextField textField2 = new JTextField();
