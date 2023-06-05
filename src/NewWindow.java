@@ -34,7 +34,11 @@ public class NewWindow implements ActionListener, KeyListener {
         textField3.setBounds(330,192,100,20);
         textField3.addActionListener(this);
         button.setBounds(0,225,150,40);
-        textArea.setBounds(0,300,1000,30);
+        button.addActionListener(this);
+        textArea.setBounds(0,300,1000,50);
+
+
+
 
 
         frame.add(label);
@@ -45,6 +49,7 @@ public class NewWindow implements ActionListener, KeyListener {
         frame.add(textField1);
         frame.add(textField2);
         frame.add(textField3);
+        frame.add(textArea);
         frame.add(button);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 420);
@@ -56,26 +61,23 @@ public class NewWindow implements ActionListener, KeyListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-      String text = textField.getText();
-      int num = Integer.parseInt(text);
-      String text1 = textField1.getText();
-      String text2 = textField1.getText();
-      int num2 = Integer.parseInt(text);
-      String text3 = textField1.getText();
-      int num3 = Integer.parseInt(text);
-        Object source = e.getSource();
-        if (source instanceof JButton) {
-            JButton button = (JButton) source;
-            String submit = button.getText();
-            if (submit.equals("Submit")) {
+        String a = e.getActionCommand();
+            if (a.equals("Submit")) {
+                int num = Integer.parseInt(textField.getText());
+                String text1 = textField1.getText().toLowerCase();
+                int num2 = Integer.parseInt(textField1.getText());
+                double num3 = Double.parseDouble(textField1.getText());
                Sequence s1 = new Sequence(num,text1,num2,num3);
-               for (Double s : s1.getList())
-               textArea.append(s  + "\n");
+
+               for (Double s : s1.getList()) {
+                   textArea.append(String.valueOf(s));
+               }
+
             }
         }
 
 
-    }
+
 
     @Override
     public void keyTyped(KeyEvent e) {
