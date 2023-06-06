@@ -7,7 +7,7 @@ public class NewWindow implements ActionListener, KeyListener {
     JFrame frame = new JFrame("Arithmetic Sequence");
     JLabel label = new JLabel("Enter the Starting Number:");
     JTextField  textField = new JTextField();
-    JLabel label1 = new JLabel("Enter the Operation you want to do (s for subtraction, a for addition):");
+    JLabel label1 = new JLabel("Enter the Operation you want to do (a for addition, s for subtraction):");
     JTextField textField1 = new JTextField();
     JLabel label2 = new JLabel("Enter the Common Difference:");
     JTextField textField2 = new JTextField();
@@ -35,7 +35,7 @@ public class NewWindow implements ActionListener, KeyListener {
         textField3.addActionListener(this);
         button.setBounds(0,225,150,40);
         button.addActionListener(this);
-        textArea.setBounds(0,300,1000,50);
+        textArea.setBounds(0,300,1000,70);
 
 
 
@@ -63,15 +63,20 @@ public class NewWindow implements ActionListener, KeyListener {
     public void actionPerformed(ActionEvent e) {
         String a = e.getActionCommand();
             if (a.equals("Submit")) {
+                button.setEnabled(false);
                 int num = Integer.parseInt(textField.getText());
                 String text1 = textField1.getText().toLowerCase();
-                int num2 = Integer.parseInt(textField1.getText());
-                double num3 = Double.parseDouble(textField1.getText());
-               Sequence s1 = new Sequence(num,text1,num2,num3);
-
-               for (Double s : s1.getList()) {
-                   textArea.append(String.valueOf(s));
+                double num2 = Double.parseDouble(textField2.getText());
+                int num3 = Integer.parseInt(textField3.getText());
+               Sequence s1 = new Sequence(num,text1,num3,num2);
+               if (text1.equals("a")) {
+                   textArea.append(String.valueOf(s1.ArithmeticSequenceA()));
+               } else if (text1.equals("s")) {
+                   textArea.append(String.valueOf(s1.ArithmeticSequenceB()));
                }
+
+
+
 
             }
         }
